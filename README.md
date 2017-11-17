@@ -15,7 +15,7 @@
 
 ### Firefox
 
-1. Gå til lanseringssiden: [Release](https://github.com/KaHole/bbes/releases/latest) trykk på "bbes_firefox.xpi"
+1. Gå til [lanseringssiden](https://github.com/KaHole/bbes/releases/latest) trykk på "bbes_firefox.xpi"
 
 2. Følg dialogen til Firefox om installering av utvidelsen: "Tillat", "Legg til" osv.
 
