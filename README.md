@@ -1,4 +1,6 @@
-# bbes - Installering
+# bbes - prøver å gjøre BB-ntnu litt bedre
+
+## Installering
 
 ### Chrome
 
@@ -17,3 +19,6 @@
 2. Naviger til "about:addons" i en ny fane
 
 3. Dra og slipp bbes_firefox.xpi på den siden
+
+## Skjermbilder
+
