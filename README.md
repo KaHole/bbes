@@ -1,4 +1,5 @@
 # bbes - prøver å gjøre BB-ntnu litt bedre
+### Nettleser utvidelse
 
 ## Installering
 
@@ -27,3 +28,8 @@
 
 ### Emne
 ![course](https://user-images.githubusercontent.com/9072087/32926997-8ddc0f96-cb4a-11e7-8aed-b42f0aafa3a5.png)
+
+
+## Detaljer
+
+Dette er en nettleser-utvidelse som modifiserer strukturen og utseende på emnesidene og forsiden/dashboardet på Blackboard NTNU. Ferdig pakkede utvidelser til Firefox og Chrome finnes under Releases, men man kan også pakke utvidelsen fra kildekoden ovenfor.
