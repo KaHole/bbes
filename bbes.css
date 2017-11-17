@@ -1,0 +1,215 @@
+/*
+@author Kristian Andersen Hole
+*/
+
+html {
+    background-color: #EDEFF0 !important;
+}
+
+body {
+    max-width: unset !important; /*Kan løses med å putte klasse på body? klasse tar presedens over body rules tror jeg*/
+    height: 100% !important;
+    margin: 0 0 0 0 !important;
+    background-color: #EDEFF0 !important;
+}
+
+#bis_announcements_inject > h3 {
+    font-weight: normal; 
+    color: #292b2c;
+    font-size: 16px;
+    border-top: 1px solid #c9c9c9;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    padding-top: 6px;
+}
+
+.contentArea {
+    /*height: unset;*/
+    height: 100%;
+}
+
+.bis_row {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    min-height: 100%;
+    /*overflow-y: scroll;*/
+    /*overflow: auto;*/
+}
+
+.bis_todos {
+    flex-grow: 1;
+    padding-left: 3%;
+    padding-right: 2%;
+    background-color: #0079BF;
+
+    box-shadow: 0 0 6px rgba(0,0,0,.4);
+
+    /*overflow-y: scroll;*/
+}
+
+#bis_left_column {
+    flex-grow: 2;
+    padding-left: 2%;
+    padding-right: 3%;
+    background-color: #EDEFF0;
+    
+    /**/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#bis_courses {
+    margin-bottom: 8px;
+}
+
+.lite {
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.ufTodoTitle {
+    color: white;
+    /*font-family: Helvetica, sans-serif;*/
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ufTable {
+    /*font-family: arial, sans-serif;*/
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+    background-color: white;
+    border-radius:6px;
+    margin-bottom: 15px;
+}
+
+.ufTr {
+  border-top: 1px solid #dddddd;
+}
+
+.ufTr:first-child {
+    border-top: none;
+  }
+
+.ufTd, .ufTh {
+    text-align: left;
+    color: #292b2c;
+    padding: 8px;
+    padding-right: 11px;
+    padding-left: 11px;
+}
+
+.ufTh {
+    font-weight: 600;
+    color: #0079BF;
+}
+
+.dark {
+    color: white;
+    background-color: #0079BF;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+}
+
+.ufTd:nth-child(2), .ufTh:nth-child(2) {
+    text-align: right;
+}
+
+.ufAssignmentName {
+    font-weight: bold;
+}
+
+.ufCourseName {
+    font-weight: 600;
+}
+
+#ufToolBox {
+    padding-top: 30px;
+    padding-bottom: 25px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ufBtn {
+    margin-right: 14px;
+    
+    /*btn*/
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: white;
+    background: none;
+    cursor: pointer;
+    padding: 8px 25px;
+    display: inline-block;
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: #FFAB4A;
+
+    border-radius: 4px;
+}
+
+.ufBtn:hover {
+    background-color: rgb(244, 155, 54);    
+}
+
+.ufBtn:active {
+    background-color: rgb(222, 138, 48);    
+}
+
+.btnRed {
+    background-color: #EB5A46;
+    margin-left: auto;
+}
+
+.btnRed:hover {
+    background-color: rgb(205, 64, 48);    
+}
+
+.btnRed:active {
+    background-color: rgb(179, 54, 40);
+}
+
+/*Courses*/
+
+.ufCourseHeading {
+    margin-top: 28px;
+    font-size: 32px;
+    color: #292b2c;
+    font-weight: bold;
+}
+
+#contentPanel {
+    margin-left: 240px;
+    margin-right: 0px;
+    max-width: unset !important;
+    height: 100% !important;
+}
+
+#bis_course_announcements {
+    margin-bottom: 8px;
+}
+
+.bis_course_todos {
+    min-width: 30em;
+}
+
+.locationPane {
+    height: 100% !important;
+    padding-bottom: 0 !important;
+    min-height: unset !important;
+}

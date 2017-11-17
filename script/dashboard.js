@@ -1,0 +1,122 @@
+/*
+@author Kristian Andersen Hole
+*/
+
+const waitLen = "Vent mens modulen lastes...".length;
+const courseModule = id("div_3_1");
+const announcementsModule = id("div_1_1");
+
+const Dashboard = {
+    url_match: /.*ntnu.blackboard.com\/webapps\/portal.*/g,
+
+    ready: function() {
+        if (courseModule == null || announcementsModule == null)
+            return false;
+        return (courseModule.innerHTML.length > waitLen 
+                && announcementsModule.innerHTML.length > waitLen
+                && id("block::1-dueView::1-dueView_1") != undefined);
+    },
+    
+    unfuck: function() {
+        var data = {};
+        
+        data.courses = Array.from(id("_3_1termCourses_noterm").lastElementChild.children).map(li => {
+        //data.courses = Array.from(document.querySelectorAll(".portletList-img.courseListing.coursefakeclass").children).map(li => {
+            var c = li.lastElementChild;
+            return {name: c.innerText, link: c.getAttribute("href")};
+        });
+    
+        data.todos = {};
+        data.todos.dueToday = getTodosFromBlock("blocklist::1-dueView:::::1-dueView_1");
+        data.todos.dueThisWeek = getTodosFromBlock("blocklist::1-dueView:::::1-dueView_3");
+        data.todos.dueFuture = getTodosFromBlock("blocklist::1-dueView:::::1-dueView_4");
+        data.todos.duePast = getTodosFromBlock("blocklist::0-pastDueView:::::0-pastDueView_pastdue_block");
+    
+        //rescue announcement module
+        const announcementsHtml = announcementsModule.innerHTML;
+
+        const contentArea = id("globalNavPageContentArea");
+        contentArea.className = "contentArea";
+        contentArea.removeAttribute("style");
+    
+        window.onresize = function(event) {
+            contentArea.removeAttribute("style");
+        };
+    
+        Cactus.render(DashboardCac, data, contentArea);
+        
+        //inject announcement module
+        id("bis_announcements_inject").innerHTML += announcementsHtml;
+    
+        //Fixes the issue of assignments without links.. BB is weird.
+        document.querySelectorAll("a").forEach(a => {
+            if (a.getAttribute("href") === "" && a.getAttribute("onclick") === "") {
+                const s = document.createElement('span');
+                s.innerHTML = a.innerHTML;
+                s.className = "ufAssignmentName";
+                a.parentNode.replaceChild(s, a);
+            }
+        });
+    }
+};
+
+/* ------------------------------------------------------------- */
+
+/* HTML Template using Cactus syntax */
+var DashboardCac = `
+<div class="bis_row">
+<div id="bis_left_column">
+    <div id="ufToolBox">
+        <button class="ufBtn" onclick="window.location.href='/webapps/bb-social-learning-BBLEARN/execute/mybb?cmd=display&toolId=MyGradesOnMyBb_____MyGradesTool'">
+            Mine Resultater
+        </button>
+        <button class="ufBtn" onclick="window.location.href='/webapps/bb-social-learning-BBLEARN/execute/mybb?cmd=display&toolId=AlertsOnMyBb_____AlertsTool'">
+            Emneoppdateringer
+        </button>
+    </div>
+    <div id="bis_courses">
+        <table class="ufTable">
+            <tr class="ufTr"><th class="ufTh dark">Emner</th></tr>
+[courses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
+        </table>
+    </div>
+    <div id="bis_announcements">
+        <table class="ufTable">
+            <tr class="ufTr"><th class="ufTh dark">Kunngjøringer</th></tr>
+            <tr class="ufTr"><td class="ufTd" id="bis_announcements_inject"></td></tr>
+        </table>
+    </div>
+</div>
+<div class="bis_todos">
+    <h1 class="ufTodoTitle">Todo</h1>
+    <table class="ufTable">
+    <tr class="ufTr">
+{{todos.dueToday}}<th class="ufTh">I dag ({length})</th>
+        <th class="ufTh">Deadline</th>
+    </tr>
+[todos.dueToday]<tr class="ufTr"><td class="ufTd"><a class="ufAssignmentName" onclick="{onclick}" href="{href}">{title}<br/><span class="lite">{course}</span></a></td><td class="ufTd"><span class="red">{due}</span></td></tr>
+    </table>
+    <table class="ufTable">
+    <tr class="ufTr">
+{{todos.dueThisWeek}}<th class="ufTh">Denne uken ({length})</th>
+        <th class="ufTh">Deadline</th>
+    </tr>
+[todos.dueThisWeek]<tr class="ufTr"><td class="ufTd"><a class="ufAssignmentName" onclick="{onclick}" href="{href}">{title}<br/><span class="lite">{course}</span></a></td><td class="ufTd">{due}</td></tr>
+    </table>
+    <table class="ufTable">
+    <tr class="ufTr">
+{{todos.dueFuture}}<th class="ufTh">Fremtid ({length})</th>
+        <th class="ufTh">Deadline</th>
+    </tr>
+[todos.dueFuture]<tr class="ufTr"><td class="ufTd"><a class="ufAssignmentName" onclick="{onclick}" href="{href}">{title}<br/><span class="lite">{course}</span></a></td><td class="ufTd">{due}</td></tr>
+    </table>
+    <table class="ufTable">
+    <tr class="ufTr">
+{{todos.duePast}}<th class="ufTh"><span class="red">Overskredet tidsfrist ({length})</span></th>
+        <th class="ufTh">Deadline</th>
+    </tr>
+[todos.duePast]<tr class="ufTr"><td class="ufTd"><a class="ufAssignmentName" onclick="{onclick}" href="{href}">{title}<br/><span class="lite">{course}</span></a></td><td class="ufTd"><span class="red">{due}</span></td></tr>
+    </table>
+</div>
+</div>
+`;
