@@ -1,5 +1,5 @@
 # bbes - prøver å gjøre BB-ntnu litt bedre
-### Nettleser utvidelse
+### Nettleser-utvidelse
 
 ## Installering
 
