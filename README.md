@@ -33,3 +33,4 @@
 ## Detaljer
 
 Dette er en nettleser-utvidelse som modifiserer strukturen og utseende på emnesidene og forsiden/dashboardet på Blackboard NTNU. Ferdig pakkede utvidelser til Firefox og Chrome finnes under Releases, men man kan også pakke utvidelsen fra kildekoden ovenfor.
+Brukes forøvrig på eget ansvar.
