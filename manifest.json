@@ -16,11 +16,5 @@
             "css": ["bbes.css"],
             "run_at": "document_end"
         }
-    ],
-
-    "applications": {
-        "gecko": {
-          "id": "bbes@hole.priv.no"
-        }
-      }
+    ]
 }
