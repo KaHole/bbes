@@ -1,5 +1,5 @@
-# bbes - prøver å gjøre Blackboard-ntnu litt bedre
-#### (Nettleser-utvidelse)
+# bbes (Nettleser-utvidelse)
+#### - prøver å gjøre Blackboard-ntnu litt bedre
 
 ### Skjermbilder
 
