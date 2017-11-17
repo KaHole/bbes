@@ -1,4 +1,4 @@
-# bbes - prøver å gjøre BB-ntnu litt bedre
+# bbes - prøver å gjøre Blackboard-ntnu litt bedre
 ### Nettleser-utvidelse
 
 ## Installering
