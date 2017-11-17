@@ -3,15 +3,6 @@
 
 ## Installering
 
-### Chrome
-
-1. Last ned "bbes_chrome.crx" fra lanseringssiden:
-[Release](https://github.com/KaHole/bbes/releases/latest)
-
-2. Naviger til "chrome://extensions/" i en ny fane
-
-3. Dra og slipp chrome-bbes.crx på den siden
-
 ### Firefox
 
 1. Last ned "bbes_firefox.xpi" fra lanseringssiden:
@@ -22,6 +13,16 @@
 3. Trykk på "utvidelser"
 
 4. Dra og slipp bbes_firefox.xpi på den siden
+
+### Chrome (midlertidig løsning)
+
+1. Trykk på "Clone or download" og så "Download ZIP"
+
+2. Pakk så ut zippen
+
+3. Naviger til "chrome://extensions/" i en ny fane og skru på "Utviklermodus"
+
+4. Trykk på "Last inn upakket utvidelse" og velg mappen som du unzippet.
 
 ## Skjermbilder
 
