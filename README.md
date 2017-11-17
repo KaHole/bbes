@@ -19,7 +19,9 @@
 
 2. Naviger til "about:addons" i en ny fane
 
-3. Dra og slipp bbes_firefox.xpi på den siden
+3. Trykk på "utvidelser"
+
+4. Dra og slipp bbes_firefox.xpi på den siden
 
 ## Skjermbilder
 
