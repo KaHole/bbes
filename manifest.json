@@ -14,7 +14,7 @@
         {
             "matches": ["*://ntnu.blackboard.com/webapps/portal*", "*://ntnu.blackboard.com/webapps/blackboard/execute/modulepage/view?course_id*"],
             "js": ["cactus/cactus.js", "script/helper.js", "script/dashboard.js", "script/course.js", "script/index.js"],
-            "css": ["bbes.css"],
+            "css": ["style/bbes.css"],
             "run_at": "document_end"
         }
     ]
