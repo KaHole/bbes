@@ -13,20 +13,9 @@
 
 ### Firefox
 
-1. Gå til [lanseringssiden](https://github.com/KaHole/bbes/releases/latest) trykk på "bbes_firefox.xpi"
+1. Gå til [BBes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
 
-2. Følg dialogen til Firefox om installering av utvidelsen: "Tillat", "Legg til" osv.
-
-### Firefox (eldre versjon)
-
-1. Last ned "bbes_firefox.xpi" fra lanseringssiden:
-[Release](https://github.com/KaHole/bbes/releases/latest)
-
-2. Naviger til "about:addons" i en ny fane
-
-3. Trykk på "utvidelser"
-
-4. Dra og slipp bbes_firefox.xpi på den siden
+2. "Legg til i Firefox"
 
 ### Skjermbilder
 
