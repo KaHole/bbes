@@ -2,6 +2,8 @@
 @author Kristian Andersen Hole
 */
 
+const courseContentArea = id("contentPanel");
+
 const courseWaitLen = "Please wait while the module loads...".length;
 const courseAnnouncementsModule = id("div_1_1");
 
@@ -13,6 +15,18 @@ const Course = {
             return false;
         return (courseAnnouncementsModule.innerHTML.length > courseWaitLen
                 && id("block::2-dueView::2-dueView_1") != undefined);
+    },
+
+    loading: function() {
+        courseContentArea.firstElementChild.setAttribute("hidden", "true");
+        var loadingText = document.createElement('h1');
+        loadingText.textContent = "Laster...";
+        loadingText.className = "loadingText";
+        courseContentArea.appendChild(loadingText);
+        
+        //Remove footer
+        const footer = id("copyright");
+        footer.parentNode.removeChild(footer);
     },
     
     unfuck: function() {
@@ -29,10 +43,8 @@ const Course = {
         //rescue usable modules
         const announcementsHtml = courseAnnouncementsModule.innerHTML;
         const quickLinksHtml = document.body.getElementsByClassName("vtbegenerated")[0].innerHTML;
-        
-        const contentArea = id("contentPanel");
 
-        Cactus.render(CourseCac, data, contentArea);
+        Cactus.render(CourseCac, data, courseContentArea);
         
         //inject usable modules
         id("bis_announcements_inject").innerHTML += announcementsHtml;

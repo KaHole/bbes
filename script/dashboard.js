@@ -2,6 +2,8 @@
 @author Kristian Andersen Hole
 */
 
+const contentArea = id("globalNavPageContentArea");
+
 const waitLen = "Vent mens modulen lastes...".length;
 const courseModule = id("div_3_1");
 const announcementsModule = id("div_1_1");
@@ -15,6 +17,14 @@ const Dashboard = {
         return (courseModule.innerHTML.length > waitLen 
                 && announcementsModule.innerHTML.length > waitLen
                 && id("block::1-dueView::1-dueView_1") != undefined);
+    },
+
+    loading: function() {
+        contentArea.firstElementChild.setAttribute("hidden", "true");
+        var loadingText = document.createElement('h1');
+        loadingText.textContent = "Laster...";
+        loadingText.className = "loadingText";
+        contentArea.appendChild(loadingText);
     },
     
     unfuck: function() {
@@ -35,7 +45,6 @@ const Dashboard = {
         //rescue announcement module
         const announcementsHtml = announcementsModule.innerHTML;
 
-        const contentArea = id("globalNavPageContentArea");
         contentArea.className = "contentArea";
         contentArea.removeAttribute("style");
     

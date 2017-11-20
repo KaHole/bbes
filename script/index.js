@@ -10,8 +10,10 @@ var page;
 
 if (Dashboard.url_match.test(ufLocation)) {
     page = Dashboard;
+    page.loading();
 } else if (Course.url_match.test(ufLocation)) {
     page = Course;
+    page.loading();
 }
 
 var upstartInterval;
