@@ -20,6 +20,8 @@ const Dashboard = {
     },
 
     loading: function() {
+        if (courseModule == null || announcementsModule == null)
+            return false;
         contentArea.firstElementChild.setAttribute("hidden", "true");
         var loadingText = document.createElement('h1');
         loadingText.textContent = "Laster...";
