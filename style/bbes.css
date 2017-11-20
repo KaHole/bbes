@@ -213,6 +213,12 @@ body {
     margin-bottom: 8px;
 }
 
+/*Give the announcements some space between.*/
+.courseDataBlock > ul > li { /*BB -> bad selector*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .bis_course_todos {
     min-width: 30em;
 }
