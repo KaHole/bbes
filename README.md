@@ -1,8 +1,6 @@
 # bbes
 #### prøver å gjøre Blackboard-ntnu litt bedre
 
-![course](https://user-images.githubusercontent.com/9072087/32926997-8ddc0f96-cb4a-11e7-8aed-b42f0aafa3a5.png)
-
 ## Installering
 
 ### Chrome
