@@ -197,7 +197,7 @@ body {
 
 .ufCourseHeading {
     margin-top: 28px;
-    font-size: 32px;
+    font-size: 28px;
     color: #292b2c;
     font-weight: bold;
 }
@@ -213,7 +213,12 @@ body {
     margin-bottom: 8px;
 }
 
-/*Give the announcements some space between.*/
+/*Give the announcements some space between and bullets*/
+.courseDataBlock > ul {
+    list-style-type: circle;
+    padding-left: 18px;
+}
+
 .courseDataBlock > ul > li { /*BB -> bad selector*/
     padding-top: 5px;
     padding-bottom: 5px;
