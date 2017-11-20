@@ -28,13 +28,26 @@ const Dashboard = {
     },
     
     unfuck: function() {
-        var data = {};
-        
-        data.courses = Array.from(id("_3_1termCourses_noterm").lastElementChild.children).map(li => {
-        //data.courses = Array.from(document.querySelectorAll(".portletList-img.courseListing.coursefakeclass").children).map(li => {
-            var c = li.lastElementChild;
-            return {name: c.innerText, link: c.getAttribute("href")};
-        });
+        var data = {studentCourses: [], assistantCourses: []};
+
+        const studCourseBlock = id("_3_1termCourses_noterm").children[1];
+        const assCourseBlock = id("_3_1termCourses_noterm").children[3];
+
+        if (studCourseBlock) {
+            data.studentCourses = Array.from(studCourseBlock.children).map(li => {
+            //data.courses = Array.from(document.querySelectorAll(".portletList-img.courseListing.coursefakeclass").children).map(li => {
+                var c = li.lastElementChild;
+                return {name: c.innerText, link: c.getAttribute("href")};
+            });
+        }
+
+        if (assCourseBlock) {
+            data.assistantCourses = Array.from(assCourseBlock.children).map(li => {
+            //data.courses = Array.from(document.querySelectorAll(".portletList-img.courseListing.coursefakeclass").children).map(li => {
+                var c = li.lastElementChild;
+                return {name: c.innerText, link: c.getAttribute("href")};
+            });
+        }
     
         data.todos = {};
         data.todos.dueToday = getTodosFromBlock("blocklist::1-dueView:::::1-dueView_1");
@@ -56,6 +69,12 @@ const Dashboard = {
         
         //inject announcement module
         id("bis_announcements_inject").innerHTML += announcementsHtml;
+
+        //remove assistant-courses-module if none
+        if (data.assistantCourses.length === 0) {
+            const assCourseModule = id("assistantCourses");
+            assCourseModule.parentNode.removeChild(assCourseModule);
+        }
     
         //Fixes the issue of assignments without links.. BB is weird.
         document.querySelectorAll("a").forEach(a => {
@@ -83,10 +102,17 @@ var DashboardCac = `
             Emneoppdateringer
         </button>
     </div>
-    <div id="bis_courses">
+    <div id="studentCourses" class="bis_courses">
         <table class="ufTable">
             <tr class="ufTr"><th class="ufTh dark">Emner</th></tr>
-[courses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
+[studentCourses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
+        </table>
+    </div>
+
+    <div id="assistantCourses" class="bis_courses">
+        <table class="ufTable">
+            <tr class="ufTr"><th class="ufTh dark">Stud.ass-emner</th></tr>
+[assistantCourses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
         </table>
     </div>
     <div id="bis_announcements">
