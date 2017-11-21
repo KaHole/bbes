@@ -52,3 +52,11 @@ function getCourseTodosFromBlock(sel) {
         return r;
     });
 }
+
+function addLoadingScreen(sel) {
+    sel.firstElementChild.setAttribute("hidden", "true");
+    var loadingText = document.createElement('h1');
+    loadingText.textContent = "Laster...";
+    loadingText.className = "loadingText";
+    sel.appendChild(loadingText);
+}

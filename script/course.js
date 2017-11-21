@@ -20,11 +20,7 @@ const Course = {
     loading: function() {
         if (courseAnnouncementsModule == null)
             return false;
-        courseContentArea.firstElementChild.setAttribute("hidden", "true");
-        var loadingText = document.createElement('h1');
-        loadingText.textContent = "Laster...";
-        loadingText.className = "loadingText";
-        courseContentArea.appendChild(loadingText);
+        addLoadingScreen(courseContentArea);
         
         //Remove footer
         const footer = id("copyright");
