@@ -4,6 +4,9 @@
 
 const contentArea = id("globalNavPageContentArea");
 
+const studentCourseHeading = "Emner hvor du er: Student";
+const assCourseHeading = "Emner hvor du er: Læringsassistent";
+
 const waitLen = "Vent mens modulen lastes...".length;
 const courseModule = id("div_3_1");
 const announcementsModule = id("div_1_1");
@@ -26,31 +29,32 @@ const Dashboard = {
     },
     
     unfuck: function() {
-        var data = {studentCourses: [], assistantCourses: []};
+        var data = {studentCourses: [], assistantCourses: [], otherCourses: []};
 
-        var courseSel = id ("_3_1termCourses_noterm");
+        Array.from(document.getElementsByClassName("courseListing")).forEach(cl => {
 
-        if (courseSel === null) /* Courses have been divided into terms, another edge case.. */
-            courseSel = id("_3_1termCourses__28_1");
-
-        const studCourseBlock = courseSel.children[1];
-        const assCourseBlock = courseSel.children[3];
-
-        if (studCourseBlock) {
-            data.studentCourses = Array.from(studCourseBlock.children).map(li => {
-            //data.courses = Array.from(document.querySelectorAll(".portletList-img.courseListing.coursefakeclass").children).map(li => {
-                var c = li.lastElementChild;
-                return {name: c.innerText, link: c.getAttribute("href")};
-            });
-        }
-
-        if (assCourseBlock) {
-            data.assistantCourses = Array.from(assCourseBlock.children).map(li => {
-            //data.courses = Array.from(document.querySelectorAll(".portletList-img.courseListing.coursefakeclass").children).map(li => {
-                var c = li.lastElementChild;
-                return {name: c.innerText, link: c.getAttribute("href")};
-            });
-        }
+            switch (cl.previousElementSibling.innerText) {
+                case studentCourseHeading:
+                    data.studentCourses = Array.from(cl.children).map(li => {
+                        var c = li.lastElementChild;
+                        return {name: c.innerText, link: c.getAttribute("href")};
+                    });
+                    break;
+                case assCourseHeading:
+                    data.assistantCourses = Array.from(cl.children).map(li => {
+                        var c = li.lastElementChild;
+                        return {name: c.innerText, link: c.getAttribute("href")};
+                    });
+                    break;
+                default:
+                    data.otherCourses.push.apply(data.otherCourses,
+                        Array.from(cl.children).map(li => {
+                        var c = li.lastElementChild;
+                        return {name: c.innerText, link: c.getAttribute("href")};
+                    }));
+                    break;
+            }
+        });
     
         data.todos = {};
         data.todos.dueToday = getTodosFromBlock("blocklist::1-dueView:::::1-dueView_1");
@@ -77,6 +81,11 @@ const Dashboard = {
         if (data.assistantCourses.length === 0) {
             const assCourseModule = id("assistantCourses");
             assCourseModule.parentNode.removeChild(assCourseModule);
+        }
+        //remove other-courses-module if none
+        if (data.otherCourses.length === 0) {
+            const otherCourseModule = id("otherCourses");
+            otherCourseModule.parentNode.removeChild(otherCourseModule);
         }
     
         //Fixes the issue of assignments without links.. BB is weird.
@@ -111,11 +120,16 @@ var DashboardCac = `
 [studentCourses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
         </table>
     </div>
-
     <div id="assistantCourses" class="bis_courses">
         <table class="ufTable">
             <tr class="ufTr"><th class="ufTh dark">Stud.ass-emner</th></tr>
 [assistantCourses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
+        </table>
+    </div>
+    <div id="otherCourses" class="bis_courses">
+        <table class="ufTable">
+            <tr class="ufTr"><th class="ufTh dark">Andre emner</th></tr>
+[otherCourses]<tr class="ufTr"><td class="ufTd"><a class="ufCourseName" href="{link}">{name}</a></td></tr>
         </table>
     </div>
     <div id="bis_announcements">
