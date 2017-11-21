@@ -32,8 +32,13 @@ const Dashboard = {
     unfuck: function() {
         var data = {studentCourses: [], assistantCourses: []};
 
-        const studCourseBlock = id("_3_1termCourses_noterm").children[1];
-        const assCourseBlock = id("_3_1termCourses_noterm").children[3];
+        var courseSel = id ("_3_1termCourses_noterm");
+
+        if (courseSel === null) /* Courses have been divided into terms, another edge case.. */
+            courseSel = id("_3_1termCourses__28_1");
+
+        const studCourseBlock = courseSel.children[1];
+        const assCourseBlock = courseSel.children[3];
 
         if (studCourseBlock) {
             data.studentCourses = Array.from(studCourseBlock.children).map(li => {
