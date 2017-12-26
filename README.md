@@ -5,15 +5,15 @@
 
 ### Chrome
 
-1. Gå til [BBes på Chrome Web Store](https://chrome.google.com/webstore/detail/bb-enhancement-suite/akgejjkciphabaknefoloigfdhghdppm)
-
-2. "Legg til i Chrome"
+1. [bbes på Chrome Web Store](https://chrome.google.com/webstore/detail/bb-enhancement-suite/akgejjkciphabaknefoloigfdhghdppm)
 
 ### Firefox
 
-1. Gå til [BBes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
+1. [bbes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
 
-2. "Legg til i Firefox"
+### Fra kilde
+
+
 
 ### Skjermbilder
 
