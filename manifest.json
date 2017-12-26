@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "BB Enhancement Suite",
+    "name": "bbes - Bedre Blackboard",
     "short_name": "bbes",
     "author": "Kristian Andersen Hole",
-    "version": "0.0.6",
+    "version": "0.1.0",
     "description": "Improve NTNU blackboard",
 
     "icons": {
