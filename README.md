@@ -1,5 +1,5 @@
 # bbes
-#### prøver å gjøre Blackboard-ntnu litt bedre
+#### Gjør Blackboard-ntnu bedre
 
 ## Installering
 
