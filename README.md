@@ -4,12 +4,10 @@
 ## Installering
 
 ### Chrome
-
-1. [bbes på Chrome Web Store](https://chrome.google.com/webstore/detail/bb-enhancement-suite/akgejjkciphabaknefoloigfdhghdppm)
+[bbes på Chrome Web Store](https://chrome.google.com/webstore/detail/bb-enhancement-suite/akgejjkciphabaknefoloigfdhghdppm)
 
 ### Firefox
-
-1. [bbes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
+[bbes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
 
 ### Fra kildekode
 
