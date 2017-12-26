@@ -11,8 +11,7 @@
 
 1. [bbes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
 
-### Fra kilde
-
+### Fra kildekode
 
 
 ### Skjermbilder
