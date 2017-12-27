@@ -3,6 +3,7 @@
 */
 
 const courseContentArea = id("contentPanel");
+const courseTitleLink = id("courseMenu_link");
 
 const courseWaitLen = "Please wait while the module loads...".length;
 const courseAnnouncementsModule = id("div_1_1");
@@ -30,7 +31,7 @@ const Course = {
     unfuck: function() {
         var data = {};
     
-        data.course = {name: courseAnnouncementsModule.firstElementChild.innerHTML};
+        data.course = {name: courseTitleLink.innerText};
 
         data.todos = {};
         data.todos.dueToday = getCourseTodosFromBlock("blocklist::2-dueView:::::2-dueView_1");
