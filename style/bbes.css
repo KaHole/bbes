@@ -160,7 +160,7 @@ body {
     color: white;
     background: none;
     cursor: pointer;
-    padding: 8px 25px;
+    padding: 8px 18px;
     display: inline-block;
     letter-spacing: 1px;
     outline: none;
@@ -168,30 +168,34 @@ body {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-    background-color: #0079BF;
+    background-color: #00B16A;
 
     border-radius: 4px;
 }
 
 .ufBtn:hover {
-    background-color: #056FAC;
+    background-color: #07AB6A;
 }
 
 .ufBtn:active {
-    background-color: #0D5B89;
+    background-color: #0A935D;
 }
 
 .btnRed {
-    background-color: #EB5A46;
+    background-color: #67809F;
+    /*background-color: #0079BF;*/
+    margin-right: 0;
     margin-left: auto;
 }
 
 .btnRed:hover {
-    background-color: rgb(205, 64, 48);    
+    background-color: #617996;
+    /*background-color: #056FAC;*/
 }
 
 .btnRed:active {
-    background-color: rgb(179, 54, 40);
+    background-color: #53667e;
+    /*background-color: #0D5B89;*/
 }
 
 /*Courses*/

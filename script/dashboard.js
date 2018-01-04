@@ -111,10 +111,10 @@ var DashboardCac = `
             Mine Resultater
         </button>
         <button class="ufBtn" onclick="window.location.href='/webapps/bb-social-learning-BBLEARN/execute/mybb?cmd=display&toolId=AlertsOnMyBb_____AlertsTool'">
-            Emneoppdateringer
+            Oppdateringer
         </button>
         <button class="ufBtn btnRed" onclick="window.location.href='/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_70_1&forwardUrl=edit_module%2F_3_1%2Fbbcourseorg%3Fcmd%3Dedit&recallUrl=%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_70_1'">
-            Velg emner som skal vises
+            Vis/skjul emner
         </button>
     </div>
     <div id="studentCourses" class="bis_courses">
