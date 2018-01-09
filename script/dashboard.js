@@ -28,7 +28,7 @@ const Dashboard = {
         addLoadingScreen(contentArea);
     },
     
-    unfuck: function() {
+    unscrew: function() {
         var data = {studentCourses: [], assistantCourses: [], otherCourses: []};
 
         Array.from(document.getElementsByClassName("courseListing")).forEach(cl => {

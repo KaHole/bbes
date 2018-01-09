@@ -21,7 +21,7 @@ var upstartInterval;
 function check() {
     if (page.ready()) {
         clearInterval(upstartInterval);
-        page.unfuck();
+        page.unscrew();
     }
  }
 

@@ -28,7 +28,7 @@ const Course = {
         footer.parentNode.removeChild(footer);
     },
     
-    unfuck: function() {
+    unscrew: function() {
         var data = {};
     
         data.course = {name: courseTitleLink.innerText};
