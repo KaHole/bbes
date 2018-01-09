@@ -7,7 +7,9 @@
 [bbes på Chrome Web Store](https://chrome.google.com/webstore/detail/bb-enhancement-suite/akgejjkciphabaknefoloigfdhghdppm)
 
 ### Firefox
-[bbes på Firefox Add-ons Store](https://addons.mozilla.org/firefox/addon/bbes/)
+1. Gå til [bbes Latest Release](https://github.com/KaHole/bbes/releases/latest)
+2. Trykk på "bbes_firefox.xpi"
+3. Følg stegene (tillat / legg til / osv.)
 
 ### Fra kildekode
 
