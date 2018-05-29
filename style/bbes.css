@@ -32,7 +32,7 @@ body {
     padding-top: 6px;
 }
 
-.contentArea {
+#globalNavPageContentArea {
     /*height: unset;*/
     height: 100%;
 }
