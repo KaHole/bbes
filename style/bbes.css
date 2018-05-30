@@ -34,7 +34,7 @@ body {
 
 #globalNavPageContentArea {
     /*height: unset;*/
-    height: 100%;
+    height: 100% !important;
 }
 
 .bis_row {
